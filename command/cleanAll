@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Removing all running and stale containers"
+sudo -- docker kill $(sudo -- docker ps -aq)
+sudo -- docker   rm $(sudo -- docker ps -aq)
+sudo -- docker ps -a
+
+echo "Removing custom networks"
+sudo -- docker network rm $(sudo -- docker network ls -q)
+sudo docker network ls
+
+echo "Removing all untagged images"
+sudo -- docker rmi -f $(sudo -- docker images | grep "<none>" | awk "{print \$3}")
+sudo -- docker images
+
+echo "Volumes are left untouched"
+sudo -- docker volume ls
+
+echo ""
