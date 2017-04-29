@@ -4,7 +4,7 @@
 if [[ $# -ne 3 ]]; then
 	echo "Wrong number of parameters (requires exacly 3)"
 	echo "Correct syntax is :"
-	echo "$0 key.pem    ec2-user@hostNameOrIP     fileToExecuteRemotely.sh"
+	echo "$0 key.pem    ec2-user@hostNameOrIP     commandFileToExecuteRemotely"
 	exit 1
 fi
 
@@ -13,8 +13,10 @@ if ! [[ -f $1 ]] ; then
 	exit 1
 fi
 
-if ! [[ -f $3 ]] ; then
+if ! [[ -f ./command/$3 ]] ; then
 	echo "The command file  ($3) you specified cannot be found !?"
+	echo "Available commands are :"
+	ls ./command
 	exit 1
 fi
 
@@ -26,6 +28,6 @@ echo "Local time is : $(date) " | tee -a history.ec2.log
 # Adjust authentication ssh parameters below as needed ...
 
 
-ssh -T -i $1 $2 < "$3" | tee -a history.ec2.log
+ssh -T -i $1 $2 < "./command/$3" | tee -a history.ec2.log
 
 echo "<<<<<<<<<<<<<  Disconnected  <<<<<<<<<<<<<<<<<<" | tee -a history.ec2.log

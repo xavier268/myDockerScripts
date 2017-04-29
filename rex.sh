@@ -8,8 +8,10 @@ if [[ $# -ne 2 ]]; then
 	exit 1
 fi
 
-if ! [[ -f $2 ]] ; then
+if ! [[ -f ./command/$2 ]] ; then
 	echo "The file ($2) you specified cannot be found !?"
+	echo "Available commands :"
+	ls ./command
 	exit 1
 fi
 
@@ -20,6 +22,6 @@ echo "Local time is : $(date) " | tee -a history.log
 # * -T option suppress the warning message about not being able to allocate a pseudo-terminal for stdin
 # Adjust authentication ssh parameters below as needed ...
 
-ssh -T "$1" < "$2" | tee -a history.log
+ssh -T "$1" < "./command/$2" | tee -a history.log
 
 echo "<<<<<<<<<<<<<  Disconnected  <<<<<<<<<<<<<<<<<<" | tee -a history.log
