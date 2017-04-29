@@ -33,13 +33,12 @@ if [[ $# -eq 3 ]] && [[ -f "./command/$3" ]] ; then
 fi
 
 
-# Here, we handle incorrect parameters  ...
+# Here, we display syntax and command list
 
-echo "???? Either wrong number of parameters (requires 2 or 3 parameters), or invalid command ????"
-echo "Correct syntax is :"
-echo "$0 username@hostname  fileToExecuteRemotely"
-echo "   ... or ..."
-echo "$0 publickey.pem  username@hostname  fileToExecuteRemotely"
-echo "Valid commands are :"
+echo ""
+echo "Usage : $0 [ publickey.pem ] username@hostname  fileToExecuteRemotely"
+echo ""
+echo "Valid available commands are :"
 ls ./command
+echo ""
 exit 1
