@@ -2,11 +2,16 @@
 
 ## Wrapper files
 
-There is a wrapper that allow **RE**mote e**X**ecution of arbitrary command files on a remote plateform.
+This is a wrapper that allow **RE**mote e**X**ecution of arbitrary command files on a remote plateform.
 Command files are simple, usual scripts that resides in the *./command/* directory. 
-They do not need to be flagged as executables (it's probably safer if they are not).
+They do not need to be flagged as executables (it's probably safer if they are not.
 
-**rex.sh** 
+*Note :* I just discovered there was already a "rex"[https://www.rexify.org], perl-based, orchestration solution.
+I changed the name of this noe to myRex.
+Both soltutions are not related. MyRex is very basic and customized for my own needs. 
+It does not requires perl, command files can be any bash commands.
+
+**myRex.sh** 
 The syntax is :
 
            ./rex.sh    [key.pem]   myUserName@hostNameOrIP     commandFileToExecuteRemotely
@@ -40,3 +45,5 @@ Results are logged locally in the *history.log* file.
 See preload command.
 
 ## Demos
+
+See demo.selgrid for launching a full hub/node grid configuration for selenium testing on remote machines.
