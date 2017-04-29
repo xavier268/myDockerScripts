@@ -1,0 +1,7 @@
+
+# ignore ssh keys, if they are some left inside !
+*.pem
+
+# ignore history log files
+*.log
+

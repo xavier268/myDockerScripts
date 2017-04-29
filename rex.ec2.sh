@@ -13,13 +13,14 @@ if ! [[ -f $1 ]] ; then
 	exit 1
 fi
 
-echo ">>>>>>>>>>>>>>  Connecting to execute : $1 >>>>>>>>>>>>>>" | tee -a history.log
-echo "Local time is : $(date) " | tee -a history.log
+echo ">>>>>>>>>>>>>>  Connecting to execute on ec2 : $1 >>>>>>>>>>>>>>" | tee -a history.ec2.log
+echo "Local time is : $(date) " | tee -a history.ec2.log
 
 # * without the quotes here, we get an 'ambiguous redirect error
 # * -T option suppress the warning message about not being able to allocate a pseudo-terminal for stdin
 # Adjust authentication ssh parameters below as needed ...
 
-ssh -T xavier@emachines < "$1" | tee -a history.log
+# ssh  -T xavier@emachines < "$1" 
+ssh -T -i testk.pem ec2-user@52.213.100.11 < "$1" | tee -a history.ec2.log
 
-echo "<<<<<<<<<<<<<  Disconnected  <<<<<<<<<<<<<<<<<<" | tee -a history.log
+echo "<<<<<<<<<<<<<  Disconnected  <<<<<<<<<<<<<<<<<<" | tee -a history.ec2.log
