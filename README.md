@@ -3,7 +3,7 @@
 ## Wrapper files
 
 There is a wrapper that allow **RE**mote e**X**ecution of arbitrary command files on a remote plateform.
-Command files are simple, usual stcripts that resides in the *./comlmand/* directory. 
+Command files are simple, usual scripts that resides in the *./command/* directory. 
 They do not need to be flagged as executables (it's probably safer if they are not).
 
 **rex.sh** 
