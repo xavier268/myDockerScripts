@@ -22,6 +22,8 @@ that can sudo without password.
 
 Root direct ssh access is **NOT** required, nor desired.
 
+Results are logged locally in the *history.log* file.
+
 
 ## Available commands to be run remotely
 
@@ -30,4 +32,8 @@ Root direct ssh access is **NOT** required, nor desired.
 **setUpAmzLinux** updates a amz linux ami that has just been started. Loads and initialize docker on it. Will not work for Alpine image.
 
 **preload** preload useful docker images for future use.
+
+**myBridge** (re)set a bridge network between containers, allowing themm to securely communicate between them. Existings bridges (except predefined system bridges) are removed. Containers can now use their container names as DNS names on that bridge to reach one another (see Docker doc for details).
+
+
 
