@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "Demo setting up a network of nodes and a hub for headless selenium testing."
+
+# Note that these images are using the (deprecacated) links, instead of a network feature.
+
+# Launch hub
+sudo -- docker run -d --name selHub -p 4444:4444  -e "GRID_MAX_SESSION=10" selenium/hub:3.4.0 
+
+#Launch 2 nodes
+sudo -- docker run -d --link selHub:hub -e "NODE_MAX_INSTANCES=7" -e "NODE_MAX_SESSION=7" selenium/node-firefox:3.4.0
+sudo -- docker run -d --link selHub:hub -e "NODE_MAX_INSTANCES=7" -e "NODE_MAX_SESSION=7" selenium/node-chrome:3.4.0
+
+sudo -- docker ps
+echo "Connect to the hub on port 4444 to see the console"
+
