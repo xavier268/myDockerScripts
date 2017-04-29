@@ -36,7 +36,7 @@ fi
 # Here, we display syntax and command list
 
 echo ""
-echo "Usage : $0 [ publickey.pem ] username@hostname  fileToExecuteRemotely"
+echo "Usage : $0 [ publickey.pem ] username@hostname  commandToExecuteRemotely"
 echo ""
 echo "Valid available commands are :"
 ls ./command
