@@ -6,6 +6,7 @@ sudo -- yum -y install docker
 sudo -- service docker start
 sleep 2
 sudo -- docker version
+sudo -- docker run hello-world
 echo "Docker installed"
 
 

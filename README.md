@@ -29,5 +29,5 @@ Root direct ssh access is **NOT** required, nor desired.
 
 **setUpAmzLinux** updates a amz linux ami that has just been started. Loads and initialize docker on it. Will not work for Alpine image.
 
-**preload** preload useful dcker images for future use.
+**preload** preload useful docker images for future use.
 
