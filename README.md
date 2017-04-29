@@ -13,7 +13,7 @@ The syntax is :
 
 Called without argument, it will display the list of commands.
 
-If no key.pem is provide, then password access is assumed. 
+If no key.pem is provided, then password access is assumed. 
 
 For ec2, remember to use ec2-user@hostNameOrIP.
 
