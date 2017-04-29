@@ -34,3 +34,9 @@ Results are logged locally in the *history.log* file.
 **preload** preload useful docker images for future use.
 
 **myBridge** (re)set a bridge network between containers, allowing themm to securely communicate between them. Existings bridges (except predefined system bridges) are removed. Containers can now use their container names as DNS names on that bridge to reach one another (see Docker doc for details).
+
+## Useful docker images
+
+See preload command.
+
+## Demos

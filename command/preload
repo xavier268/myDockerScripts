@@ -15,7 +15,9 @@ sudo -- docker pull openjdk:8-jdk-alpine
 
 sudo -- docker pull alpine:3.5
 
-
+sudo -- docker pull selenium/hub:3.4.0
+sudo -- docker pull selenium/node-firefox:3.4.0
+sudo -- docker pull selenium/node-chrome:3.4.0
 
 sudo -- docker images
 sudo -- df -h
