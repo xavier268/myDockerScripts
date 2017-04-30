@@ -1,9 +1,9 @@
 #! /bin/bash
 
 echo "Launching/creating a private bridged network for local containers to communicate with one another securely"
-echo "All prevous custom networks are removed"
+echo "Removed if previous MYBRIDGE existed"
 
-sudo -- docker network rm $( sudo -- docker network ls -q )
+sudo -- docker network rm MYBRIDGE
 sudo -- docker network create MYBRIDGE
 sudo -- docker network inspect MYBRIDGE
 sudo -- docker network ls
