@@ -7,6 +7,8 @@ Command files are simple, usual scripts that resides in the *./command/* directo
 They do not need to be flagged as executables (it's probably safer if they are not). 
 The traditionnal first line : *#!/bin/bash* is simply ignored, and bash does not even need to be installed on the remote machine.
 
+This project is designed to serve as a basis for my development/deployment/testing of docker-based applications, without all the complexity of a "traditionnal" orchestration environment.
+
 *Note :* I just discovered there was already a *Rex*[https://www.rexify.org], perl-based, orchestration solution.
 I changed the name of this one to **myRex**.
 Both solutions are not related. **myRex** is very basic and customized for my own needs. 
@@ -37,7 +39,7 @@ Results are logged locally in the *history.log* file.
 
 **setUpAmzLinux** updates a amz linux ami that has just been started. Loads and initialize docker on it. Will not work for Alpine image.
 
-**myBridge** (re)set a bridge network between containers, allowing themm to securely communicate between them. Existings bridges (except predefined system bridges) are removed. Containers can now use their container names as DNS names on that bridge to reach one another (see Docker doc for details).
+**myBridge** (re)set a bridge network between containers, allowing themm to securely communicate between them. An existing bridge with same name (MYBRIDGE) is removed. Containers can now use their container names as DNS names on that bridge to reach one another (see Docker doc for details. Using such network is now prefered over using --link features.
 
 **cleanAll** will kill/clean all containers, networks, remove untagged images. Data volumes and tagged images are left untouched.
 
