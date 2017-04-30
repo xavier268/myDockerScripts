@@ -7,7 +7,7 @@ sudo -- docker ps -a
 
 echo "Removing custom networks"
 sudo -- docker network rm $(sudo -- docker network ls -q)
-sudo docker network ls
+sudo -- docker network ls
 
 echo "Removing all untagged images"
 sudo -- docker rmi -f $(sudo -- docker images | grep "<none>" | awk "{print \$3}")
