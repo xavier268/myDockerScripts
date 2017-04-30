@@ -4,7 +4,8 @@
 
 This is a wrapper that allow **RE**mote e**X**ecution of arbitrary command files on a remote plateform.
 Command files are simple, usual scripts that resides in the *./command/* directory. 
-They do not need to be flagged as executables (it's probably safer if they are not.
+They do not need to be flagged as executables (it's probably safer if they are not). 
+The traditionnal first line : *#!/bin/bash* is simply ignored, and bash does not even need to be installed on the remote machine.
 
 *Note :* I just discovered there was already a *Rex*[https://www.rexify.org], perl-based, orchestration solution.
 I changed the name of this one to **myRex**.
