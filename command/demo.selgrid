@@ -23,5 +23,5 @@ sudo -- docker run  -d -e "HUB_PORT_4444_TCP_ADDR=selHub" -e "HUB_PORT_4444_TCP_
 
 #Display running containers details
 sudo -- docker ps
-echo "Connect to the hub on port 4444 to see the console"
+echo "Connect on http://localhost:4444/grid/console to see the console"
 
