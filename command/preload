@@ -20,13 +20,14 @@ sudo -- socker pull maven:latest
 sudo -- docker pull alpine:3.5
 sudo -- docker pull alpine:latest
 
-
 sudo -- docker pull selenium/hub:3.4.0
 sudo -- docker pull selenium/node-firefox:3.4.0
 sudo -- docker pull selenium/node-chrome:3.4.0
 
-
 sudo -- docker pull glassfish/server:4.1.1
+
+sudo -- docker pull payara/micro:171
+sudo -- docker pull payara/micro:latest
 
 sudo -- docker pull mariadb:10.3
 sudo -- docker pull mariadb:latest
