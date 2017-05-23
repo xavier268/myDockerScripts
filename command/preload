@@ -9,15 +9,29 @@ sudo -- docker pull mongo:3.4.4
 sudo -- docker pull mongo:latest
 
 sudo -- docker pull softinstigate/restheart:3.0.3
+sudo -- docker pull softinstigate/restheart:latest
 
 sudo -- docker pull openjdk:8-jre-alpine
 sudo -- docker pull openjdk:8-jdk-alpine
 
+sudo -- docker pull maven:3.5-alpine
+sudo -- socker pull maven:latest
+
 sudo -- docker pull alpine:3.5
+sudo -- docker pull alpine:latest
+
 
 sudo -- docker pull selenium/hub:3.4.0
 sudo -- docker pull selenium/node-firefox:3.4.0
 sudo -- docker pull selenium/node-chrome:3.4.0
+
+
+sudo -- docker pull glassfish/server:4.1.1
+
+sudo -- docker pull mariadb:10.3
+sudo -- docker pull mariadb:latest
+
+sudo -- docker pull swarm:latest
 
 sudo -- docker images
 sudo -- df -h
