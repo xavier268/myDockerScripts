@@ -23,6 +23,9 @@ sudo -- docker pull alpine:latest
 sudo -- docker pull selenium/hub:3.4.0
 sudo -- docker pull selenium/node-firefox:3.4.0
 sudo -- docker pull selenium/node-chrome:3.4.0
+sudo -- docker pull selenium/hub
+sudo -- docker pull selenium/node-firefox
+sudo -- docker pull selenium/node-chrome
 
 sudo -- docker pull glassfish/server:4.1.1
 
