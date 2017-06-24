@@ -14,8 +14,10 @@ sudo -- docker pull softinstigate/restheart:latest
 sudo -- docker pull openjdk:8-jre-alpine
 sudo -- docker pull openjdk:8-jdk-alpine
 
-sudo -- docker pull maven:3.5-alpine
-sudo -- socker pull maven:latest
+sudo -- docker pull maven:alpine
+
+sudo -- docker pull maven:3.5-jdk-8- alpine
+sudo -- docker pull maven:alpine
 
 sudo -- docker pull alpine:3.5
 sudo -- docker pull alpine:latest
@@ -36,6 +38,7 @@ sudo -- docker pull mariadb:10.3
 sudo -- docker pull mariadb:latest
 
 sudo -- docker pull swarm:latest
+sudo -- docker pull nicolaka/netshoot:latest
 
 sudo -- docker images
 sudo -- df -h
