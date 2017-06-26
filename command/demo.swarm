@@ -1,0 +1,35 @@
+#! /bin/bash
+
+echo "Init swarm (single host)"
+sudo -- docker swarm init
+
+echo "Create overlay network"
+sudo -- docker network create --driver overlay myovl
+sudo -- docker network ls
+
+echo "Remove existing previous 'www' and 'alp' services"
+sudo -- docker service rm www
+sudo -- docker service rm alp
+
+echo "Create nginx(www) and alpine (alp) services"
+sudo -- docker service create --network myovl --name www --replicas 3 --publish 80:80 nginx
+# Use the tail -f trick to keep the container running ...
+sudo -- docker service create --network myovl --name alp --replicas 1 alpine tail -f /dev/null
+
+echo "Check launched services"
+sudo -- docker service ls
+
+
+echo "You can now test the following actions :"
+echo "     * open firefox on the localhost:80 => you should see one of the nginx server"
+echo "     * connect into the alpine service CONTAINER and check dns"
+echo "           sudo -- docker exec -it alp.1.xxxx...  sh"
+echo "        and then, once inside, run :"
+echo "           nslookup www "
+echo "           nslookup tasks.www "
+
+
+
+
+
+
