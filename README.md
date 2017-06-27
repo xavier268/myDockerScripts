@@ -33,7 +33,10 @@ Root direct ssh access is **NOT** required, nor desired.
 Results are logged locally in the *history.log* file.
 
 
-## Available commands to be run remotely
+## Some available commands to be run remotely
+
+Commands are located in the *./command* directory.
+Most of these commands are also useful as standalone commands and can be run directly.
 
 **status** runs connectivity test on distant host, displaying docker status.
 
@@ -45,8 +48,10 @@ Results are logged locally in the *history.log* file.
 
 ## Useful docker images
 
-See preload command.
+See **preload** command.
 
 ## Demos
 
 **demo.selgrid** demonstrate launching a full remote hub/node grid configuration for selenium testing on remote machines.
+
+
