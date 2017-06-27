@@ -44,6 +44,9 @@ sudo -- docker pull mariadb:latest
 sudo -- docker pull swarm:latest
 sudo -- docker pull nicolaka/netshoot:latest
 
+sudo -- docker pull registry:latest
+sudo -- docker pull registry:2.6.1
+
 sudo -- docker images
 sudo -- df -h
 date
