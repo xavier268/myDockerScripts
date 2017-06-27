@@ -14,8 +14,6 @@ sudo -- docker pull softinstigate/restheart:latest
 sudo -- docker pull openjdk:8-jre-alpine
 sudo -- docker pull openjdk:8-jdk-alpine
 
-sudo -- docker pull maven:alpine
-
 sudo -- docker pull maven:3.5-jdk-8-alpine
 sudo -- docker pull maven:alpine
 
@@ -31,8 +29,14 @@ sudo -- docker pull selenium/node-chrome
 
 sudo -- docker pull glassfish/server:4.1.1
 
-sudo -- docker pull payara/micro:171
+sudo -- docker pull payara/micro:172
 sudo -- docker pull payara/micro:latest
+
+sudo -- docker pull payara/server-full:172
+sudo -- docker pull payara/server-full:latest
+
+sudo -- docker pull payara/server-web:172
+sudo -- docker pull payara/server-web:latest
 
 sudo -- docker pull mariadb:10.3
 sudo -- docker pull mariadb:latest
