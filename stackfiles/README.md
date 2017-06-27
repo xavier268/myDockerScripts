@@ -13,4 +13,8 @@ Create your swarm and launch the stack :
     docker swarm init*, etc ...
     docker stack deploy --compose-file name-of-the-stak-file.yaml  stack-name-to-create-or-update*
 
+then
+
+    docker stack rm stack-name
+
 

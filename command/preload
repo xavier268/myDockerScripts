@@ -8,6 +8,7 @@ sudo -- docker pull node:alpine
 sudo -- docker pull node:8-alpine
 
 sudo -- docker pull nginx:alpine
+sudo -- docker pull nginx:latest
 sudo -- docker pull nginx:1.13.0-alpine
 
 sudo -- docker pull mongo:3.4.4

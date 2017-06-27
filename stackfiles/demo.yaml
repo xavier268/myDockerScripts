@@ -1,30 +1,54 @@
 version: '3'
 
+# Comments are Ok with this format
+# REMINDER : BEWARE of <tab>, they are not accepted !!
+
 services: 
     www:
-        image:  nginx:latest        
+        labels:
+            description: "Basic nginx web server"
+        image:  nginx:latest
         networks:
             - stacknet
         deploy:
             replicas: 4
         ports:
             - 80:80
+        volumes: 
+            - web-data:/usr/share/nginx/html/
 
     alp:
+        labels:
+            description: "Alpine containers, accessing the web data"
         image:  alpine:latest
-        command: ["sh","-c","nslookup www ; tail -f /dev/null"]
+        # this form is required to handle multiple command - the last one needed to keep the container running
+        # here, we make the dns addresses lookup result available from all the web sites index page.
+        # CAUTION  the data volume is located on the manager node, 
+        # remember that all nginx containers will have one on their own nodes !
+        command: ["sh","-c","echo \"<h1>Addresses as seen from inside (alp) the overlay netwk of the swarm cluster</h1><pre>\" > /tmp/index.html ;\
+                   echo \"=======nslookup=========\" >> /tmp/index.html ;\
+                   nslookup www       >> /tmp/index.html ;\
+                   nslookup tasks.www >> /tmp/index.html ;\
+                   echo \"CAUTION : cannot lookup 'alp' \" >> /tmp/index.html ;\
+                   echo \"=======ip address=======\" >> /tmp/index.html ;\
+                   ip address         >> /tmp/index.html ;\
+                   echo \"=======ip route=========\" >> /tmp/index.html ;\
+                   ip route         >> /tmp/index.html ;\
+                   echo \"=======ip link==========\" >> /tmp/index.html ;\
+                   ip link            >> /tmp/index.html ;\
+                   echo \"</pre>\" >> /tmp/index.html ;  tail -f /dev/null"]
         networks:
             - stacknet
         deploy:
             replicas: 1
             placement:
                 constraints: [node.role == manager]
-        depends_on:
-            - www
+        volumes:
+            - web-data:/tmp
 
 networks:
     stacknet:
 
 volumes:
-    stackdata:
+    web-data:
 
