@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Launching locally a registry - make sure you know its ip address !"
+echo "You may consider editing this command to "
+echo "        - refer to the volume /var/lib/registry"
+echo "        - use a bridge network to access it by its name"
+
+sudo -- docker run -d -p 5000:5000 --name registry registry
