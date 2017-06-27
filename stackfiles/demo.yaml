@@ -3,16 +3,17 @@ version: '3'
 services: 
     www:
         image:  nginx:latest        
-        network:
+        networks:
             - stacknet
+
         deploy:
- 	    replicas: 4
+            replicas: 4
         ports:
             - 80:80
 
     alp:
         image:  alpine:latest
-        network:
+        networks:
             - stacknet
         deploy:
             replicas: 1
@@ -27,4 +28,3 @@ networks:
 volumes:
     stackdata:
 
-		- 
