@@ -1,1 +1,1 @@
-# Images docker files for containerized production/development environments
+# Image docker files for containerized development environment

@@ -1,4 +1,0 @@
-#!/bin/bash
-docker build -f node-prod.df -t node-prod .
-docker build -f node-dev.df -t node-dev .
-

@@ -1,27 +1,32 @@
 #!/bin/bash
 
-./buildAllImages
+# Rebuild image
+docker build -t node-dev .
 
 # Development content
 docker volume create app
 
-# production content
+# Production content
 docker volume create dist
 
 
-# Create demo app 
-# docker run -it --rm  -v app:/app -p 4200:4200 node-dev bash -c "ng new my-app && cd my-app && ng serve --host 0.0.0.0 --port 4200" 
-docker run -it -v app:/app  node-dev bash -c "ng new my-app" 
+# Create a demo app, called my-app
+docker run -it -v app:/my-app  -p 4200:4200 --name node-dev node-dev
 
-# compile
-docker run -it --rm  -v app:/app -v dist:/dist -p 4200:4200 node-dev bash -c "cd my-app && ng build --prod && mv dist/* /dist" 
-# TODO - use --no-delete-outputpath and clean /dist manually. Mount volume directly on the original dist folder ? But need to create in app directly, not my-app ? Or pass app name as an arg/env value ?
+# Serve on port 4200 a live server
+docker run -d -v app:/my-app -p 4200:4200 --name live-serv node-dev ng serve --host 0.0.0.0 --port 4200
 
+# compile demo app
+docker run -it --rm  -v app:/my-app -v dist:/dist --name compil node-dev bash -c "cd /my-app && ng build --prod && mv /my-app/dist/* /dist" 
 
 # run aot-compiled in nginx
-docker run -d -p 80:80 -v dist:/usr/share/nginx/html:ro nginx
+docker run -d -p 80:80 -v dist:/usr/share/nginx/html:ro --name nginx nginx
+
 
 # test
+firefox http://localhost:4200
 firefox http://localhost
+
+
 
 
