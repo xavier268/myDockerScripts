@@ -47,7 +47,6 @@ sudo -- docker pull payara/server-web:latest
 sudo -- docker pull mariadb:10.3
 sudo -- docker pull mariadb:latest
 
-sudo -- docker pull swarm:latest
 sudo -- docker pull nicolaka/netshoot:latest
 
 sudo -- docker pull registry:latest

@@ -1,3 +1,1 @@
-# Dockerfiles for custom images
-
-Each file is located in its own directory.
+# Images docker files for containerized production/development environments

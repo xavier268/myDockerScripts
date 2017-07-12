@@ -1,0 +1,24 @@
+#####################################################################
+#  Production image
+#####################################################################
+
+FROM node:8-alpine AS node-prod
+LABEL maintainer="Xavier Gandillot<xavier@gandillot.com>"
+LABEL comment="Node image to use for production"
+
+EXPOSE 4200
+
+RUN apk add --no-cache bash 
+ 
+# Globally install needed packages
+# they will be in /usr/local/lib/node_modules/
+# ex : RUN npm -g install express
+
+# The /app directory will be erased 
+# and replaced with whatever volume is provided at runtime.
+VOLUME /app
+
+
+WORKDIR /app
+CMD ["npm","start"] 
+
