@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Rebuild image
+# Rebuild images
+cd node-dev
 docker build -t node-dev .
+cd ..
 
 # Development content
 docker volume create app

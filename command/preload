@@ -4,6 +4,9 @@ echo "Pre-loading a set of docker images"
 
 sudo -- docker pull bash
 
+sudo -- docker pull centos:7
+sudo -- docker pull debian:stretch
+
 sudo -- docker pull node:alpine
 sudo -- docker pull node:8-alpine
 
