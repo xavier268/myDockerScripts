@@ -20,6 +20,5 @@ RUN apk update \
 VOLUME /workdir
 WORKDIR /workdir
 
-CMD /node_modules/slap/slap.js
-
+CMD /node_modules/slap/slap.js --fileBrowser.width 30 
 
