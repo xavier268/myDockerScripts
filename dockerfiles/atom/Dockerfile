@@ -42,12 +42,16 @@ RUN yum -y update && \
 RUN dbus-uuidgen > /etc/machine-id
 RUN useradd developper
 
-# It is REQUIRED not to run as root inside the container or X11 will fail.
-USER developper
-
+# We need to create an empty dir and set the owner on it for the volume to inherit these permissions.
+RUN mkdir /workdir && chown -R developper:developper /workdir
 VOLUME /workdir
 WORKDIR /workdir
 
 
-CMD atom -f
+# It is REQUIRED not to run as root inside the container or X11 will fail.
+USER developper
+
+
+
+CMD ["bash","-c","atom -f"] 
 

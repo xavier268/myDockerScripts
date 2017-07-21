@@ -4,6 +4,10 @@
 cd node-dev
 docker build -t node-dev .
 cd ..
+cd atom
+docker build -t atom . 
+cd ..
+
 
 # Development content
 docker volume create app
@@ -24,6 +28,8 @@ docker run -it --rm  -v app:/my-app -v dist:/dist --name compil node-dev bash -c
 # run aot-compiled in nginx
 docker run -d -p 80:80 -v dist:/usr/share/nginx/html:ro --name nginx nginx
 
+# edit with atom
+docker run -it --rm -v /tmp:/tmp -v app:/workdir -e DISPLAY atom 
 
 # test
 firefox http://localhost:4200
