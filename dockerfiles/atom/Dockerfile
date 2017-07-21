@@ -40,17 +40,17 @@ RUN yum -y update && \
     && yum clean all
 
 RUN dbus-uuidgen > /etc/machine-id
-RUN useradd developper
+RUN useradd -u 1000 developper 
+
 
 # We need to create an empty dir and set the owner on it for the volume to inherit these permissions.
-RUN mkdir /workdir && chown -R developper:developper /workdir
+# This will only serve if the volume is being created here. It will not affect the content of an existing volume !
+RUN mkdir /workdir && chown -R 1000:1000 /workdir
 VOLUME /workdir
 WORKDIR /workdir
 
-
 # It is REQUIRED not to run as root inside the container or X11 will fail.
-USER developper
-
+USER 1000:1000
 
 
 CMD ["bash","-c","atom -f"] 

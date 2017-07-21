@@ -21,6 +21,6 @@ VOLUME /my-app
 
 WORKDIR /my-app
 
-# Default command : create an empty my-app application, install and compile it.
-CMD ["bash","-c","cd / && ng new my-app && cd /my-app && npm install && ng lint --type-check true"]
+# Default command : create an empty my-app application, install and compile it, setting its ownr to 1000
+CMD ["bash","-c","cd / && ng new my-app && cd /my-app && npm install && ng lint --type-check true && chown -R 1000:1000 ."]
 
