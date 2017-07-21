@@ -1,12 +1,7 @@
 #!/bin/bash
 
 # Rebuild images
-cd node-dev
-docker build -t node-dev .
-cd ..
-cd atom
-docker build -t atom . 
-cd ..
+./buildAll
 
 
 # Development content
@@ -17,16 +12,16 @@ docker volume create dist
 
 
 # Create a demo app, called my-app - by default, files created are owned by 1000, but image runs as root
-docker run -it -v app:/my-app  -p 4200:4200 --name node-dev node-dev
+docker run -it -v app:/my-app  -p 4200:4200 --name node-dev xg/node-dev
 
 # edit with atom - all GUI apps need to run as user 1000 !
-docker run -it --rm -v /tmp:/tmp -v app:/workdir -e DISPLAY atom 
+docker run -it --rm -v /tmp:/tmp -v app:/workdir -e DISPLAY xg/atom 
 
 # Serve on port 4200 a live server, user root
-docker run -d -v app:/my-app -p 4200:4200 --name live-serv node-dev ng serve --host 0.0.0.0 --port 4200
+docker run -d -v app:/my-app -p 4200:4200 --name live-serv xg/node-dev ng serve --host 0.0.0.0 --port 4200
 
 # compile demo app, user root
-docker run -it --rm  -v app:/my-app -v dist:/dist --name compil node-dev bash -c "cd /my-app && ng build --prod && mv /my-app/dist/* /dist" 
+docker run -it --rm  -v app:/my-app -v dist:/dist --name compil xg/node-dev bash -c "cd /my-app && ng build --prod && mv /my-app/dist/* /dist" 
 
 # run aot-compiled in nginx, user root
 docker run -d -p 80:80 -v dist:/usr/share/nginx/html:ro --name nginx nginx

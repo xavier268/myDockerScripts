@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "-----------------------------------------------------------------------------"
+echo "This script will build all images in the subdirectories of the current folder"
+echo "-----------------------------------------------------------------------------"
+
+for dir in * ; do
+   if [ -d $dir ] ; then
+        echo ""
+        echo "==================================="
+        echo "Processing $dir -> xg/$(basename $dir)"
+        echo "==================================="
+        cd $dir
+        docker build -t "xg/$(basename $dir)"  .
+        cd ..
+   fi
+done
