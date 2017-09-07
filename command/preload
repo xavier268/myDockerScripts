@@ -36,7 +36,10 @@ sudo -- docker pull selenium/hub
 sudo -- docker pull selenium/node-firefox
 sudo -- docker pull selenium/node-chrome
 
-sudo -- docker pull glassfish/server:4.1.1
+# Not maintained anymore ...
+# sudo -- docker pull glassfish/server:4.1.1
+sudo -- docker pull oracle/glassfish:4.1.1
+sudo -- docker pull oracle/glassfish:4.1.2
 
 sudo -- docker pull payara/micro:172
 sudo -- docker pull payara/micro:latest
