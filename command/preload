@@ -61,6 +61,10 @@ sudo -- docker pull nicolaka/netshoot:latest
 sudo -- docker pull registry:latest
 sudo -- docker pull registry:2.6.1
 
+sudo -- docker pull redis:4-alpine
+sudo -- docker pull redis:alpine
+sudo -- docker pull redis
+
 sudo -- docker images
 sudo -- df -h
 date
