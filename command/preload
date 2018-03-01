@@ -2,68 +2,90 @@
 
 echo "Pre-loading a set of docker images"
 
+echo "-------------Utilities ------------------"
 sudo -- docker pull bash
 
+sudo -- docker pull nicolaka/netshoot:latest
+
+sudo -- docker pull registry:latest
+sudo -- docker pull registry:2.6
+
+echo "-----------  OSes -----------------------"
+
 sudo -- docker pull centos:7
+sudo -- docker pull centos:latest
+
 sudo -- docker pull debian:stretch
+sudo -- docker pull debian:latest
+
+sudo -- docker pull fedora:latest
+
+sudo -- docker pull alpine:3.7
+sudo -- docker pull alpine:latest
+
+
+echo "-----------  Servers --------------------"
 
 sudo -- docker pull node:alpine
 sudo -- docker pull node:8-alpine
+sudo -- docker pull node:9-alpine
 
 sudo -- docker pull nginx:alpine
 sudo -- docker pull nginx:latest
-sudo -- docker pull nginx:1.13.0-alpine
 
-sudo -- docker pull mongo:3.4.4
+sudo -- docker pull httpd:alpine1
+
+sudo -- docker pull oracle/glassfish:4.1.2
+sudo -- docker pull oracle/glassfish:5.0
+sudo -- docker pull oracle/glassfish:latest
+
+sudo -- docker pull payara/micro:181
+sudo -- docker pull payara/micro:latest
+
+sudo -- docker pull payara/server-full:181
+sudo -- docker pull payara/server-full:latest
+
+sudo -- docker pull payara/server-web:181
+sudo -- docker pull payara/server-web:latest
+
+echo "------------- Databases -----------------"
+
+sudo -- docker pull mongo:3.6
 sudo -- docker pull mongo:latest
 
-sudo -- docker pull softinstigate/restheart:3.1.3
+sudo -- docker pull softinstigate/restheart:3.2.2
 sudo -- docker pull softinstigate/restheart:latest
+
+sudo -- docker pull mariadb:10.3
+sudo -- docker pull mariadb:latest
+
+sudo -- docker pull redis:4-alpine
+sudo -- docker pull redis:alpine
+sudo -- docker pull redis:latest
+
+echo " ------------ Java ----------------------"
 
 sudo -- docker pull openjdk:8-jre-alpine
 sudo -- docker pull openjdk:8-jdk-alpine
 sudo -- docker pull openjdk:9-jdk
 sudo -- docker pull openjdk:9-jre
+sudo -- docker pull openjdk:10-jre
+sudo -- docker pull openjdk:10-jdk
+
 
 sudo -- docker pull maven:3.5-jdk-8-alpine
 sudo -- docker pull maven:alpine
 
-sudo -- docker pull alpine:3.5
-sudo -- docker pull alpine:latest
+echo " ------------- Selenium ------------------"
 
-sudo -- docker pull selenium/hub:3.4.0
-sudo -- docker pull selenium/node-firefox:3.4.0
-sudo -- docker pull selenium/node-chrome:3.4.0
-sudo -- docker pull selenium/hub
-sudo -- docker pull selenium/node-firefox
-sudo -- docker pull selenium/node-chrome
+sudo -- docker pull selenium/hub:3.9
+sudo -- docker pull selenium/hub:latest
 
-# Not maintained anymore ...
-# sudo -- docker pull glassfish/server:4.1.1
-sudo -- docker pull oracle/glassfish:4.1.1
-sudo -- docker pull oracle/glassfish:4.1.2
-sudo -- docker pull oracle/glassfish:5.0
+sudo -- docker pull selenium/node-firefox:3.9
+sudo -- docker pull selenium/node-firefox:latest
 
-sudo -- docker pull payara/micro:172
-sudo -- docker pull payara/micro:latest
-
-sudo -- docker pull payara/server-full:172
-sudo -- docker pull payara/server-full:latest
-
-sudo -- docker pull payara/server-web:172
-sudo -- docker pull payara/server-web:latest
-
-sudo -- docker pull mariadb:10.3
-sudo -- docker pull mariadb:latest
-
-sudo -- docker pull nicolaka/netshoot:latest
-
-sudo -- docker pull registry:latest
-sudo -- docker pull registry:2.6.1
-
-sudo -- docker pull redis:4-alpine
-sudo -- docker pull redis:alpine
-sudo -- docker pull redis
+sudo -- docker pull selenium/node-chrome:3.9
+sudo -- docker pull selenium/node-chrome:latest
 
 sudo -- docker images
 sudo -- df -h
