@@ -33,7 +33,7 @@ sudo -- docker pull node:9-alpine
 sudo -- docker pull nginx:alpine
 sudo -- docker pull nginx:latest
 
-sudo -- docker pull httpd:alpine1
+sudo -- docker pull httpd:alpine
 
 sudo -- docker pull oracle/glassfish:4.1.2
 sudo -- docker pull oracle/glassfish:5.0
