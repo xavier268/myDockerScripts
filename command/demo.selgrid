@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="3.4.0"
+VERSION="3.9"
 echo "Demo setting up a network of nodes and a hub for headless selenium testing - version $VERSION"
 
 # This is NOT using the deprecated '--link' feature as per the demo from selenium any more.
