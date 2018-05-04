@@ -27,48 +27,46 @@ sudo -- docker pull alpine:latest
 echo "-----------  Servers --------------------"
 
 sudo -- docker pull node:alpine
-sudo -- docker pull node:8-alpine
-sudo -- docker pull node:9-alpine
+sudo -- docker pull node:10-alpine
 
 sudo -- docker pull nginx:alpine
-sudo -- docker pull nginx:latest
 
 sudo -- docker pull httpd:alpine
 
-sudo -- docker pull oracle/glassfish:4.1.2
-sudo -- docker pull oracle/glassfish:5.0
-sudo -- docker pull oracle/glassfish:latest
+#sudo -- docker pull oracle/glassfish:4.1.2
+#sudo -- docker pull oracle/glassfish:5.0
+#sudo -- docker pull oracle/glassfish:latest
 
-sudo -- docker pull payara/micro:181
-sudo -- docker pull payara/micro:latest
+sudo -- docker pull payara/micro:5.181
+#sudo -- docker pull payara/micro:latest
 
-sudo -- docker pull payara/server-full:181
-sudo -- docker pull payara/server-full:latest
+sudo -- docker pull payara/server-full:5.181
+#sudo -- docker pull payara/server-full:latest
 
-sudo -- docker pull payara/server-web:181
-sudo -- docker pull payara/server-web:latest
+sudo -- docker pull payara/server-web:5.181
+#sudo -- docker pull payara/server-web:latest
 
 echo "------------- Databases -----------------"
 
 sudo -- docker pull mongo:3.6
-sudo -- docker pull mongo:latest
+#sudo -- docker pull mongo:latest
 
 sudo -- docker pull softinstigate/restheart:3.2.2
-sudo -- docker pull softinstigate/restheart:latest
+#sudo -- docker pull softinstigate/restheart:latest
 
-sudo -- docker pull mariadb:10.3
-sudo -- docker pull mariadb:latest
+sudo -- docker pull mariadb:10
+#sudo -- docker pull mariadb:latest
 
 sudo -- docker pull redis:4-alpine
 sudo -- docker pull redis:alpine
-sudo -- docker pull redis:latest
+#sudo -- docker pull redis:latest
 
 echo " ------------ Java ----------------------"
 
 sudo -- docker pull openjdk:8-jre-alpine
 sudo -- docker pull openjdk:8-jdk-alpine
-sudo -- docker pull openjdk:9-jdk
-sudo -- docker pull openjdk:9-jre
+#sudo -- docker pull openjdk:9-jdk
+#sudo -- docker pull openjdk:9-jre
 sudo -- docker pull openjdk:10-jre
 sudo -- docker pull openjdk:10-jdk
 
