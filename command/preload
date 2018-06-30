@@ -49,9 +49,11 @@ sudo -- docker pull payara/server-web:5.181
 echo "------------- Databases -----------------"
 
 sudo -- docker pull mongo:3.6
+sudo -- docker pull mongo:3.7
+sudo -- docker pull mongo:4.0
 #sudo -- docker pull mongo:latest
 
-sudo -- docker pull softinstigate/restheart:3.2.2
+sudo -- docker pull softinstigate/restheart:3.3.6
 #sudo -- docker pull softinstigate/restheart:latest
 
 sudo -- docker pull mariadb:10
