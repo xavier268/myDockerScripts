@@ -78,13 +78,13 @@ sudo -- docker pull maven:alpine
 
 echo " ------------- Selenium ------------------"
 
-sudo -- docker pull selenium/hub:3.11.0
+sudo -- docker pull selenium/hub:3.14
 sudo -- docker pull selenium/hub:latest
 
-sudo -- docker pull selenium/node-firefox:3.11.0
+sudo -- docker pull selenium/node-firefox:3.14
 sudo -- docker pull selenium/node-firefox:latest
 
-sudo -- docker pull selenium/node-chrome:3.11.0
+sudo -- docker pull selenium/node-chrome:3.14
 sudo -- docker pull selenium/node-chrome:latest
 
 sudo -- docker images
