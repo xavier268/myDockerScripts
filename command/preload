@@ -10,6 +10,8 @@ sudo -- docker pull nicolaka/netshoot:latest
 sudo -- docker pull registry:latest
 sudo -- docker pull registry:2.6
 
+sudo -- docker pull alpeware/chrome-headless-stable:latest
+
 echo "-----------  OSes -----------------------"
 
 sudo -- docker pull centos:7
